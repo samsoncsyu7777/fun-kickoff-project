@@ -4,6 +4,7 @@ import Box from '@material-ui/core/Box';
 import { Formik, FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
 import useStyles from './useStyles';
 import { CircularProgress } from '@material-ui/core';
 
@@ -28,7 +29,7 @@ interface Props {
 
 export default function Login({ handleSubmit }: Props): JSX.Element {
   const classes = useStyles();
-
+  const signupLink = '/signup';
   return (
     <Formik
       initialValues={{
@@ -46,17 +47,20 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
     >
       {({ handleSubmit, handleChange, values, touched, errors, isSubmitting }) => (
         <form onSubmit={handleSubmit} className={classes.form} noValidate>
+          <Typography className={classes.label}>Email address</Typography>
           <TextField
+            variant="outlined"
+            color="secondary"
             id="email"
-            label={<Typography className={classes.label}>E-mail address</Typography>}
             fullWidth
-            margin="normal"
+            margin="dense"
             InputLabelProps={{
               shrink: true,
             }}
             InputProps={{
               classes: { input: classes.inputs },
             }}
+            placeholder="Your email"
             name="email"
             autoComplete="email"
             autoFocus
@@ -65,11 +69,13 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
             value={values.email}
             onChange={handleChange}
           />
+          <Typography className={classes.label}>Password</Typography>
           <TextField
+            variant="outlined"
+            color="secondary"
             id="password"
-            label={<Typography className={classes.label}>Password</Typography>}
             fullWidth
-            margin="normal"
+            margin="dense"
             InputLabelProps={{
               shrink: true,
             }}
@@ -77,6 +83,7 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
               classes: { input: classes.inputs },
               endAdornment: <Typography className={classes.forgot}>Forgot?</Typography>,
             }}
+            placeholder="Your password"
             type="password"
             autoComplete="current-password"
             helperText={touched.password ? errors.password : ''}
@@ -85,11 +92,16 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
             onChange={handleChange}
           />
           <Box textAlign="center">
-            <Button type="submit" size="large" variant="contained" color="primary" className={classes.submit}>
+            <Button type="submit" size="large" variant="contained" color="secondary" className={classes.submit}>
               {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'Login'}
             </Button>
           </Box>
-          <div style={{ height: 95 }} />
+          <Box textAlign="center" className={classes.signupBox}>
+            <Typography className={classes.newMember}>New member?</Typography>
+            <Link to={signupLink} className={classes.link}>
+              <Typography className={classes.signupLink}>Sign up</Typography>
+            </Link>
+          </Box>
         </form>
       )}
     </Formik>

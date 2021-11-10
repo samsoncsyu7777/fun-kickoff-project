@@ -4,6 +4,7 @@ import Box from '@material-ui/core/Box';
 import { Formik, FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
 import useStyles from './useStyles';
 import { CircularProgress } from '@material-ui/core';
 
@@ -31,6 +32,7 @@ interface Props {
 
 const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
   const classes = useStyles();
+  const loginLink = '/login';
 
   return (
     <Formik
@@ -51,17 +53,41 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
     >
       {({ handleSubmit, handleChange, values, touched, errors, isSubmitting }) => (
         <form onSubmit={handleSubmit} className={classes.form} noValidate>
+          <Typography className={classes.label}>Email address</Typography>
           <TextField
-            id="username"
-            label={<Typography className={classes.label}>Username</Typography>}
+            variant="outlined"
+            color="secondary"
+            id="email"
             fullWidth
-            margin="normal"
+            margin="dense"
             InputLabelProps={{
               shrink: true,
             }}
             InputProps={{
               classes: { input: classes.inputs },
             }}
+            placeholder="Your email"
+            name="email"
+            autoComplete="email"
+            helperText={touched.email ? errors.email : ''}
+            error={touched.email && Boolean(errors.email)}
+            value={values.email}
+            onChange={handleChange}
+          />
+          <Typography className={classes.label}>Name</Typography>
+          <TextField
+            variant="outlined"
+            color="secondary"
+            id="username"
+            fullWidth
+            margin="dense"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            InputProps={{
+              classes: { input: classes.inputs },
+            }}
+            placeholder="Your name"
             name="username"
             autoComplete="username"
             autoFocus
@@ -70,35 +96,20 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
             value={values.username}
             onChange={handleChange}
           />
+          <Typography className={classes.label}>Password</Typography>
           <TextField
-            id="email"
-            label={<Typography className={classes.label}>E-mail address</Typography>}
-            fullWidth
-            margin="normal"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            InputProps={{
-              classes: { input: classes.inputs },
-            }}
-            name="email"
-            autoComplete="email"
-            helperText={touched.email ? errors.email : ''}
-            error={touched.email && Boolean(errors.email)}
-            value={values.email}
-            onChange={handleChange}
-          />
-          <TextField
+            variant="outlined"
+            color="secondary"
             id="password"
-            label={<Typography className={classes.label}>Password</Typography>}
             fullWidth
-            margin="normal"
+            margin="dense"
             InputLabelProps={{
               shrink: true,
             }}
             InputProps={{
               classes: { input: classes.inputs },
             }}
+            placeholder="Create a password"
             type="password"
             autoComplete="current-password"
             helperText={touched.password ? errors.password : ''}
@@ -106,11 +117,16 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
             value={values.password}
             onChange={handleChange}
           />
-
           <Box textAlign="center">
-            <Button type="submit" size="large" variant="contained" color="primary" className={classes.submit}>
-              {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'Create'}
+            <Button type="submit" size="large" variant="contained" color="secondary" className={classes.submit}>
+              {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'SIGN UP'}
             </Button>
+          </Box>
+          <Box textAlign="center" className={classes.loginBox}>
+            <Typography className={classes.isMember}>Already a member?</Typography>
+            <Link to={loginLink} className={classes.link}>
+              <Typography className={classes.loginLink}>Login</Typography>
+            </Link>
           </Box>
         </form>
       )}

@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import { custom } from '../../../themes/custom';
 
 const useStyles = makeStyles((theme) => ({
   form: {
@@ -6,30 +7,50 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(1),
   },
   label: {
-    fontSize: 19,
-    color: 'rgb(0,0,0,0.4)',
+    fontSize: 11,
+    fontWeight: 600,
+    color: custom.colors.black,
     paddingLeft: '5px',
+    marginTop: '18px',
+    marginLeft: -theme.shape.borderRadius,
+    lineHeight: '0px',
+    textTransform: 'uppercase',
   },
   inputs: {
-    marginTop: '.8rem',
-    height: '2rem',
-    padding: '5px',
+    height: 43,
+    fontSize: 15,
+    padding: '4px 18px 4px 18px',
   },
   forgot: {
     paddingRight: 10,
-    color: '#3a8dff',
+    color: custom.colors.red,
   },
   submit: {
-    margin: theme.spacing(3, 2, 2),
     padding: 10,
-    width: 160,
-    height: 56,
+    width: 130,
+    height: 44,
     borderRadius: theme.shape.borderRadius,
-    marginTop: 49,
-    fontSize: 16,
-    backgroundColor: '#3a8dff',
+    margin: '40px 0px 45px 0px',
+    fontSize: 12,
+    fontWeight: 'bold',
+    boxShadow: 'none',
+  },
+  signupBox: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  newMember: {
+    fontSize: 13,
     fontWeight: 'bold',
   },
+  signupLink: {
+    fontSize: 13,
+    color: custom.colors.red,
+    fontWeight: 'bold',
+    textDecoration: 'underline',
+    marginLeft: 5,
+  },
+  link: { textDecoration: 'none' },
 }));
 
 export default useStyles;
