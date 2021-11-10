@@ -19,16 +19,16 @@ const AuthHeader = ({ btnText }: Props): JSX.Element => {
     <LogoHeader>
       <Box p={1} className={classes.authHeader}>
         <Link to={becomeSitterLink} className={classes.link}>
-          <Typography className={classes.accAside}>BECOME A SITTER</Typography>
+          <Typography className={classes.accAside}>Become a sitter</Typography>
         </Link>
         <Link to={loginLink} className={classes.link}>
-          <Button color="secondary" className={classes.accBtn} variant={btnText === 'LOGIN' ? 'contained' : 'outlined'}>
-            LOGIN
+          <Button color="secondary" className={classes.accBtn} variant={btnText === 'login' ? 'contained' : 'outlined'}>
+            login
           </Button>
         </Link>
         <Link to={signupLink} className={classes.link}>
-          <Button color="secondary" className={classes.accBtn} variant={btnText === 'LOGIN' ? 'outlined' : 'contained'}>
-            SIGN UP
+          <Button color="secondary" className={classes.accBtn} variant={btnText === 'login' ? 'outlined' : 'contained'}>
+            sign up
           </Button>
         </Link>
       </Box>

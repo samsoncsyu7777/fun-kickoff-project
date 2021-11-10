@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
   welcome: {
     fontSize: 30,
+    textTransform: 'capitalize',
     paddingBottom: 15,
     color: custom.colors.black,
     fontWeight: 800,

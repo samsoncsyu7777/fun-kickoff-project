@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '40px 0px 45px 0px',
     fontSize: 12,
     fontWeight: 'bold',
+    textTransform: 'uppercase',
     boxShadow: 'none',
   },
   signupBox: {
