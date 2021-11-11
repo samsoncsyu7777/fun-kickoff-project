@@ -1,9 +1,9 @@
 const dailyAvailability = {
   startTime: {
-    type: String,
+    type: Number,
   },
   endTime: {
-    type: String,
+    type: Number,
   },
 };
 export const weeklyAvailability = {
