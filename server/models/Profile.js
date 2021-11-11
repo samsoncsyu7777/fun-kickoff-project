@@ -1,8 +1,14 @@
 const mongoose = require("mongoose");
 const { weeklyAvailability } = require("./availability");
-const { paymentProfile } = require("./paymentProfile");
 
 const profileSchema = new mongoose.Schema({
+  userId: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "user",
+      required: true,
+    },
+  ],
   firstName: {
     type: String,
     required: true
@@ -14,14 +20,11 @@ const profileSchema = new mongoose.Schema({
   gender: {
     type: String,
     enum: ["MALE", "FEMALE", "OTHER"],
-    required: true
+    required: true,
+    uppercase: true
   },
   birth: {
     type: Date,
-    required: true
-  },
-  email: {
-    type: String,
     required: true
   },
   phone: {
@@ -37,12 +40,9 @@ const profileSchema = new mongoose.Schema({
   availability: {
     type: weeklyAvailability
   },
-  paymentProfile: {
-    type: paymentProfile
-  },
   photo: {
     type: String
   }
 });
 
-module.exports = User = mongoose.model("Profile", profileSchema);
+module.exports = User = mongoose.model("profile", profileSchema);
