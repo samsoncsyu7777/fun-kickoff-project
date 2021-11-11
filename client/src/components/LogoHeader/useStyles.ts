@@ -11,14 +11,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: custom.colors.white,
     boxShadow: 'none',
   },
-  logoBox: {
-    height: '100%',
-    alignSelf: 'flex-start',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
   logoImage: {
     height: '50%',
     marginLeft: 25,

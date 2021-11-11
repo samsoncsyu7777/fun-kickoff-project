@@ -36,18 +36,8 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'uppercase',
     boxShadow: 'none',
   },
-  signupBox: {
-    display: 'flex',
-    justifyContent: 'center',
-  },
-  newMember: {
-    fontSize: 13,
-    fontWeight: 'bold',
-  },
   signupLink: {
-    fontSize: 13,
     color: custom.colors.red,
-    fontWeight: 'bold',
     textDecoration: 'underline',
     marginLeft: 5,
   },

@@ -96,11 +96,11 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
               {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'login'}
             </Button>
           </Box>
-          <Box textAlign="center" className={classes.signupBox}>
-            <Typography className={classes.newMember}>New member?</Typography>
-            <Link to={signupLink} className={classes.link}>
-              <Typography className={classes.signupLink}>Sign up</Typography>
-            </Link>
+          <Box textAlign="center" display="flex" justifyContent="center">
+            <Typography variant="h4">New member?</Typography>
+            <Typography variant="h4" component={Link} to={signupLink} className={classes.signupLink}>
+              Sign up
+            </Typography>
           </Box>
         </form>
       )}

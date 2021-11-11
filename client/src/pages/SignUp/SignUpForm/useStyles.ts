@@ -36,18 +36,8 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'uppercase',
     boxShadow: 'none',
   },
-  loginBox: {
-    display: 'flex',
-    justifyContent: 'center',
-  },
-  isMember: {
-    fontSize: 13,
-    fontWeight: 'bold',
-  },
   loginLink: {
-    fontSize: 13,
     color: custom.colors.red,
-    fontWeight: 'bold',
     textDecoration: 'underline',
     marginLeft: 5,
   },

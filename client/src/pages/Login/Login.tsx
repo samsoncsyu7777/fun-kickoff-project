@@ -22,7 +22,6 @@ export default function Login(): JSX.Element {
   ) => {
     login(email, password).then((data) => {
       if (data.error) {
-        console.error({ error: data.error.message });
         setSubmitting(false);
         updateSnackBarMessage(data.error.message);
       } else if (data.success) {

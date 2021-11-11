@@ -12,7 +12,7 @@ const LogoHeader = ({ children }: Props): JSX.Element => {
 
   return (
     <Grid className={classes.authHeaderGrid}>
-      <Box p={1} className={classes.logoBox}>
+      <Box p={1} height="100%" alignItems="center" display="flex">
         <img className={classes.logoImage} src={logo} alt="logo" />
       </Box>
       {children}

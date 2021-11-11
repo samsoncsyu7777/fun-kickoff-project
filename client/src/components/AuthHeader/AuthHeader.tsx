@@ -17,10 +17,10 @@ const AuthHeader = ({ btnText }: Props): JSX.Element => {
 
   return (
     <LogoHeader>
-      <Box p={1} className={classes.authHeader}>
-        <Link to={becomeSitterLink} className={classes.link}>
-          <Typography className={classes.accAside}>Become a sitter</Typography>
-        </Link>
+      <Box p={1} height="100%" display="flex" alignItems="center" paddingRight="45px" marginLeft="auto">
+        <Typography component={Link} to={becomeSitterLink} variant="h5" className={classes.accAside}>
+          Become a sitter
+        </Typography>
         <Link to={loginLink} className={classes.link}>
           <Button color="secondary" className={classes.accBtn} variant={btnText === 'login' ? 'contained' : 'outlined'}>
             login

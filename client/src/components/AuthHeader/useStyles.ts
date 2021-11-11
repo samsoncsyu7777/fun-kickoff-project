@@ -2,20 +2,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { custom } from '../../themes/custom';
 
 const useStyles = makeStyles((theme) => ({
-  authHeader: {
-    height: '100%',
-    alignSelf: 'flex-end',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    display: 'flex',
-    flexWrap: 'wrap',
-    paddingRight: 45,
-    marginLeft: 'auto',
-  },
   accAside: {
-    fontSize: 11,
     color: custom.colors.black,
-    fontWeight: 700,
     textDecoration: 'underline',
     textTransform: 'uppercase',
     textAlign: 'center',
