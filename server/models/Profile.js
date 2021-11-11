@@ -1,14 +1,13 @@
 const mongoose = require("mongoose");
 const { weeklyAvailability } = require("./availability");
+const Schema = mongoose.Schema;
 
 const profileSchema = new mongoose.Schema({
-  userId: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "user",
-      required: true,
-    },
-  ],
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: "user",
+    required: true,
+  },
   firstName: {
     type: String,
     required: true
