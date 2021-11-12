@@ -1,17 +1,11 @@
 import { makeStyles } from '@material-ui/core/styles';
+import { custom } from '../../themes/custom';
 
 const useStyles = makeStyles((theme) => ({
-  authHeader: {
-    alignSelf: 'flex-end',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
   accAside: {
-    fontSize: 14,
-    color: '#b0b0b0',
-    fontWeight: 400,
+    color: custom.colors.black,
+    textDecoration: 'underline',
+    textTransform: 'uppercase',
     textAlign: 'center',
     marginRight: 35,
     whiteSpace: 'nowrap',
@@ -21,14 +15,14 @@ const useStyles = makeStyles((theme) => ({
   },
   link: { textDecoration: 'none' },
   accBtn: {
-    width: 170,
-    height: 54,
+    width: 110,
+    height: 40,
+    fontSize: 11,
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
     borderRadius: theme.shape.borderRadius,
-    filter: 'drop-shadow(0px 2px 6px rgba(74,106,149,0.2))',
-    backgroundColor: '#ffffff',
-    color: '#3a8dff',
     boxShadow: 'none',
-    marginRight: 35,
+    marginRight: 9,
   },
 }));
 
