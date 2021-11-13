@@ -1,14 +1,21 @@
-import { useState, MouseEvent } from 'react';
+import { useState, MouseEvent, useCallback } from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import { useAuth } from '../../context/useAuthContext';
+import { User } from '../../interface/User';
+import Avatar from '@material-ui/core/Avatar';
+import { useHistory } from 'react-router-dom';
 
-const AuthMenu = (): JSX.Element => {
+interface Props {
+  user: User;
+}
+
+const AuthMenu = ({ user }: Props): JSX.Element => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const { logout } = useAuth();
+  const history = useHistory();
 
   const handleClick = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -23,10 +30,14 @@ const AuthMenu = (): JSX.Element => {
     logout();
   };
 
+  const routeToProfile = useCallback(() => {
+    history.push('/profile');
+  }, [history]);
+
   return (
     <div>
       <IconButton aria-label="show auth menu" aria-controls="auth-menu" aria-haspopup="true" onClick={handleClick}>
-        <MoreHorizIcon />
+        <Avatar alt="Profile Image" src={`https://robohash.org/${user.email}.png`} />
       </IconButton>
       <Menu
         id="auth-menu"
@@ -41,6 +52,7 @@ const AuthMenu = (): JSX.Element => {
         getContentAnchorEl={null}
       >
         <MenuItem onClick={handleLogout}>Logout</MenuItem>
+        <MenuItem onClick={routeToProfile}>Go to profile</MenuItem>
       </Menu>
     </div>
   );
