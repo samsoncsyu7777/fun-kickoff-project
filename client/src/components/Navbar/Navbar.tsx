@@ -16,7 +16,7 @@ const Navbar = ({ loggedInUser }: Props): JSX.Element => {
         { title: 'messages', link: '/messages', withBadge: true },
       ]
     : [
-        { title: 'Become A Sitter', link: '/becomeASitter', withBadge: true },
+        { title: 'Become A Sitter', link: '/becomeASitter', withBadge: false },
         { title: 'notifications', link: '/notifications', withBadge: true },
         { title: 'my sitters', link: '/mySitters', withBadge: true },
         { title: 'messages', link: '/messages', withBadge: true },
