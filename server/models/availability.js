@@ -6,7 +6,8 @@ const dailyAvailability = {
     type: Number,
   },
 };
-export const weeklyAvailability = {
+
+exports.weeklyAvailability = {
   monday: {
     type: dailyAvailability,
   },
@@ -28,4 +29,5 @@ export const weeklyAvailability = {
   sunday: {
     type: dailyAvailability,
   },
-}
+};
+

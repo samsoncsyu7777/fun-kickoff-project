@@ -10,38 +10,41 @@ const profileSchema = new mongoose.Schema({
   },
   firstName: {
     type: String,
-    required: true
+    required: true,
   },
   lastName: {
     type: String,
-    required: true
+    required: true,
   },
   gender: {
     type: String,
     enum: ["MALE", "FEMALE", "OTHER"],
     required: true,
-    uppercase: true
+    uppercase: true,
   },
   birth: {
     type: Date,
-    required: true
+    required: true,
   },
   phone: {
     type: String,
-    required: true
+    required: true,
   },
   address: {
-    type: String
+    type: String,
   },
   description: {
-    type: String
+    type: String,
   },
   availability: {
-    type: weeklyAvailability
+    type: weeklyAvailability,
   },
   photo: {
-    type: String
-  }
+    type: String,
+  },
+  isSitter: {
+    type: Boolean,
+  },
 });
 
 module.exports = User = mongoose.model("Profile", profileSchema);
