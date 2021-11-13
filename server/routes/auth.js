@@ -15,6 +15,6 @@ router.route('/login').post(validateLogin, loginUser);
 
 router.route('/user').get(protect, loadUser);
 
-router.route('/logout').get(logoutUser);
+router.route('/logout').post(logoutUser);
 
 module.exports = router;
