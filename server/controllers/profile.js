@@ -107,7 +107,7 @@ exports.getAllProfiles = asyncHandler(async (req, res, next) => {
   
   const profilesArray = await Profile.find({});
 
-  if (!profilesArray) {
+  if (Array.isArray(profilesArray) && profilesArray.length === 0) {
     res.status(500);
     throw new Error("Server failed to get a list of profiles");
   }
