@@ -13,7 +13,7 @@ const NavbarTitle = ({ title, link, withBadge }: Props): JSX.Element => {
   const classes = useStyles();
 
   return (
-    <Badge color="error" variant="dot" invisible={!withBadge}>
+    <Badge color="error" variant="dot" invisible={!withBadge} className={classes.badge}>
       <Typography component={Link} to={link} variant="h3" className={classes.title}>
         {title}
       </Typography>
