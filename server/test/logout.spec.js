@@ -5,11 +5,11 @@ const app = require("../app.js");
 chai.should();
 chai.use(chaiHttp);
 
-describe("Pinging the Logout controller: GET /logout", () => {
+describe("Pinging the Logout controller: POST /logout", () => {
   it("it should return 200 and logout response", (done) => {
     chai
       .request(app.server)
-      .get(`/auth/logout`)
+      .post(`/auth/logout`)
       .end((err, res) => {
         res.should.have.status(200);
         res.should.have
