@@ -5,5 +5,6 @@ export const custom = {
     grey: '#b0b0b0',
     blue: '#3a8dff',
     black: '#000000',
+    green: '#00cc00',
   },
 };

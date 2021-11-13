@@ -9,6 +9,13 @@ export const theme = createMuiTheme({
       textTransform: 'none',
       fontWeight: 700,
     },
+    h3: {
+      fontWeight: 'bold',
+      fontSize: 15,
+      '@media (min-width: 600px)': {
+        fontSize: 18,
+      },
+    },
     h4: {
       fontWeight: 'bold',
       fontSize: 11,
@@ -27,6 +34,7 @@ export const theme = createMuiTheme({
   palette: {
     primary: { main: '#3A8DFF' },
     secondary: { main: custom.colors.red },
+    error: { main: custom.colors.green },
   },
   shape: {
     borderRadius: 5,

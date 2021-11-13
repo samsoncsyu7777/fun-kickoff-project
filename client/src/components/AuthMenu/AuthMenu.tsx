@@ -4,8 +4,15 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import { useAuth } from '../../context/useAuthContext';
+import { User } from '../../interface/User';
+import Avatar from '@material-ui/core/Avatar';
+import AvatarDisplay from '../AvatarDisplay/AvatarDisplay';
 
-const AuthMenu = (): JSX.Element => {
+interface Props {
+  user: User;
+}
+
+const AuthMenu = ({ user }: Props): JSX.Element => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const { logout } = useAuth();
@@ -26,7 +33,7 @@ const AuthMenu = (): JSX.Element => {
   return (
     <div>
       <IconButton aria-label="show auth menu" aria-controls="auth-menu" aria-haspopup="true" onClick={handleClick}>
-        <MoreHorizIcon />
+        <Avatar alt="Profile Image" src={`https://robohash.org/${user.email}.png`} />
       </IconButton>
       <Menu
         id="auth-menu"
